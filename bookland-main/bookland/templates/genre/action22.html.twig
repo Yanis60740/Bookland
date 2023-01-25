@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 22{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 22: <h4>Afficher le nombre de pages moyens de tous les livres d’un genre donné</h4></h1>
+{{ form_start(form22) }}
+
+<div class="form-row">
+  <div class="col-md-5" style="margin: 20px 0">
+    <div class="position-relative form-group">
+      <label for="genre">Genre</label>
+      {{ form_widget(form22.genre, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+</div>
+{{ form_widget(form22.envoyer, {'attr': {'class': 'btn btn-primary'
+
+}}) }} 
+
+{{ form_end(form22) }}
+{% endblock %}

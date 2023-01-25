@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 22{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 22: <h4>Afficher le nombre de pages moyens de tous les livres d’un genre donné</h4></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><h3>Genre</h3></th>
+                <th><h3>Nombre moyen de pages</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ genres }}</td>
+                <td>{{ nbpages_moyenne }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

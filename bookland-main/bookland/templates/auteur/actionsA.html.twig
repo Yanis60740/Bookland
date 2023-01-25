@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auteurs{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Auteurs</h1>
+
+    <h5 style="margin: 10px auto;">Action 16 : Liste des auteurs ayant écrits dans au moins 3 livres différents :</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Auteur</th>
+                <th>Livres</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for auteur in action16 %}
+                <tr>
+                    <td>{{ auteur.nomPrenom }}</td>
+                    <td>
+                        {% for livre in auteur.livres %}
+                            {% if loop.last == false %}
+                                {{ livre.titre }},
+                            {% else %}
+                                {{ livre.titre}}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h5>Action 20 : Affiche pour chaque auteur la liste des genres dans l’ordre chronologique pour lesquels il a 
+    écrit au moins livre :</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Auteur</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for auteur in auteurs %}
+                <tr>
+                    {% if auteur.livres|length > 0 %}
+                        <td>{{ auteur.nomPrenom }}</td>
+                        <td>
+                        {% for livre in auteur.livres %}
+                            {% for genre in livre.genres %}
+                                {% if loop.last == false %}
+                                    {{ genre.nom }},
+                                {% else %}
+                                    {{ genre.nom }},
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </td>
+                    {% endif %}
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h5>Action 21 : Affiche pour chaque auteur la liste des genres dans lesquels il a écrit au moins un livre :</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Auteur</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for auteur in auteurs %}
+                <tr>
+                {% if auteur.livres|length > 0 %}
+                    <td>{{ auteur.nomPrenom }}</td>
+                    <td>
+                        {% for livre in auteur.livres %}
+                        {% for genre in livre.genres %}
+                            {% if loop.last == false %}
+                                {{ genre.nom }},
+                            {% else %}
+                                {{ genre.nom }},
+                            {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+                    </td>
+                {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('livre_action26') }}">Changer la note de tous les livres d'un auteur</a>
+    <div style="margin-top: 10px;">
+        <a class="btn btn-secondary" href="{{ path('auteur_index') }}">Retourner à la liste des auteurs</a>
+    </div>
+{% endblock %}

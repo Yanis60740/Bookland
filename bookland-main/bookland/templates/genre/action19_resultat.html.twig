@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 19{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 19: <h4>Afficher le nombre total de pages écrites dans un genre donné</h4></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><h3>Genre</h3></th>
+                <th><h3>Nombre de pages</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ genres }}</td>
+                <td>{{ nbpages }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

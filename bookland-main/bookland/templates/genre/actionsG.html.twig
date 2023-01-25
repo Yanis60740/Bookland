@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Genre{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Genres</h1>
+
+    <h5>Action 18 : Lister les genres et pour chacun d’entre eux, la liste des auteurs des auteurs y ayant publié au moins un livre</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Auteur</th>
+                <th>Livres</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for genre in genres %}
+                <tr>
+                    <td>{{ genre.Nom }}</td>
+                    <td>
+                        {% for livre in genre.livres %}
+                        {% for auteur in livre.auteurs %}
+                            {% if loop.last == false %}
+                                {{ auteur.nomPrenom }},
+                            {% else %}
+                                {{ auteur.nomPrenom}}
+                            {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+<h5>Action 24 : supprimer les genres sans livre répertorié</h5>
+{{ form_start(form24) }}
+{{ form_widget(form24.envoyer, {'attr': {'class': 'btn btn-primary'
+
+}}) }}  
+{{ form_end(form24) }}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bookland{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<!--
+<div class="example-wrapper">
+    
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/bapti/Desktop/MIAGE/S5/SYMFONY/bookland/bookland/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/bapti/Desktop/MIAGE/S5/SYMFONY/bookland/bookland/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
+    </ul>
+    -->
+    <!-- Ou class="container" de bootstrap
+    
+</div>
+-->
+<div class="row" style="margin-bottom: 10px;">
+    <div class="col-md-11" style="text-align: center;">
+        <h2>Bienvenue sur Bookland</h2>
+        <h6><i>Le paradis des lecteurs</i></h6>
+    </div>
+</div>
+
+<div class="row">
+    <h4>Sur Bookland, vous trouverez un large choix de livres, de genres ainsi que d'auteurs.</h4>
+    <h6>Chaque livre est caractérisé par son genre ou son auteur. Ainsi vous trouverez facilement ce que vous cherchez.</h6>
+</div>
+
+<div class="row">
+    <p>
+        Pour commencer à utiliser bookland, initialisez le site en cliquant
+        <a class="btn btn-warning" href="{{ path('init') }}">ici.</a>
+    </p>
+    
+</div>
+
+
+{% endblock %}

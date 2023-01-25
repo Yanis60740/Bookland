@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 19{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 19: <h4>Afficher le nombre total de pages écrites dans un genre donné</h4></h1>
+{{ form_start(form19) }}
+    
+<div class="form-row">
+  <div class="col-md-5" style="margin: 20px 0">
+    <div class="position-relative form-group">
+      <label for="genre">Genre</label>
+      {{ form_widget(form19.genre, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+</div>
+{{ form_widget(form19.envoyer, {'attr': {'class': 'btn btn-primary'
+
+}}) }} 
+    
+{{ form_end(form19) }}
+{% endblock %}

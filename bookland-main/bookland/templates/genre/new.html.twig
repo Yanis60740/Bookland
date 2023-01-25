@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un nouveau genre{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Ajouter un nouveau genre</h1>
+
+    {{ include('genre/_form.html.twig') }}
+
+    <a class="btn btn-secondary" href="{{ path('genre_index') }}">Revenir à la liste des genres</a>
+{% endblock %}

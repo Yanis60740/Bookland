@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 26{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 26 : <h4>Augmenter la note de tous les livres d’un auteur donné : 
+                                                la valeur à ajouter sera soit une valeur explicitement renseignée, 
+                                                    soit par défaut la valeur 1 dans le cas où 
+                                                        elle ne serait pas renseignée</h4></h1>
+{{ form_start(form26) }}
+
+<div class="form-row">
+  <div class="col-md-5" style="margin-top: 20px">
+    <div class="position-relative form-group">
+      <label for="auteur">Auteur</label>
+      {{ form_widget(form26.auteur, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5" style="margin: 20px 0">
+    <div class="position-relative form-group">
+      <label for="note">Note</label>
+      {{ form_widget(form26.note, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+</div>
+{{ form_widget(form26.envoyer, {'attr': {'class': 'btn btn-primary'
+
+}}) }} 
+    
+{{ form_end(form26) }}
+{% endblock %}

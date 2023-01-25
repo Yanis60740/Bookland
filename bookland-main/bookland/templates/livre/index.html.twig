@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livres{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Livres</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for livre in livres %}
+            <tr>
+                <td>{{ livre.titre }}</td>
+                <td>
+                    <a class="btn btn-info" style="margin-right: 10px" href="{{ path('livre_show', {'id': livre.id}) }}">Plus</a>
+                    <a class="btn btn-info" href="{{ path('livre_edit', {'id': livre.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun livre trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('livre_new') }}">Ajouter un nouveau livre</a>
+
+{% endblock %}

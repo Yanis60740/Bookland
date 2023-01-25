@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le genre{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Modifier le genre</h1>
+
+    {{ include('genre/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a class="btn btn-secondary" href="{{ path('genre_index') }}">Revenir à la liste des genres</a>
+
+    {{ include('genre/_delete_form.html.twig') }}
+{% endblock %}

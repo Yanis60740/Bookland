@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 13{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 13: <h4>Lister les livres dont la date de parution est comprise entre deux années données</h4></h1>
+{{ form_start(form13) }}
+<div class="form-row">
+  <div class="col-md-5" style="margin-top: 20px">
+    <div class="position-relative form-group">
+      <label for="date_de_debut">Date de début</label>
+      {{ form_widget(form13.date_de_debut, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5" style="margin: 20px 0">
+    <div class="position-relative form-group">
+      <label for="date_de_fin">Date de fin</label>
+      {{ form_widget(form13.date_de_fin, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+</div>
+{{ form_widget(form13.envoyer, {'attr': {'class': 'btn btn-primary'
+
+}}) }}  
+    
+{{ form_end(form13) }}
+{% endblock %}

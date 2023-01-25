@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 25{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 25: <h4>Rechercher des livres via une partie de titre</h4></h1>
+{{ form_start(form25) }}
+    
+<div class="form-row">
+  <div class="col-md-5" style="margin: 20px 0">
+    <div class="position-relative form-group">
+      <label for="titre">Titre</label>
+      {{ form_widget(form25.titre, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+</div>
+{{ form_widget(form25.envoyer, {'attr': {'class': 'btn btn-primary'
+
+}}) }} 
+
+{{ form_end(form25) }}
+{% endblock %}

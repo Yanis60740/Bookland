@@ -1,0 +1,72 @@
+{% if errors is not empty %}
+  <div class="alert alert-danger col-md-5">
+    {% for error in errors %}
+      <ul style="margin: 0px">
+        <li>{{ error }}</li>
+          </ul>
+    {% endfor %}
+  </div>
+{% endif %}
+{{ form_start(form) }}
+<div class="form-row">
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="isbn">Isbn</label>
+      {{ form_widget(form.isbn, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="titre">Titre</label>
+      {{ form_widget(form.titre, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="isbn">Nombre de page</label>
+      {{ form_widget(form.nbpages, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="isbn">Date de parution</label>
+      {{ form_widget(form.date_de_parution, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="isbn">Note</label>
+      {{ form_widget(form.note, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="isbn">Auteur(s)</label>
+      {{ form_widget(form.auteurs, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="isbn">Genre(s)</label>
+      {{ form_widget(form.genres, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+</div>
+<button style="margin: 20px 0 10px 0" type="submit" class="btn btn-primary">
+  {{ button_label|default('Confirmer') }}
+</button>
+{{ form_end(form) }}

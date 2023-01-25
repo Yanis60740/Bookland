@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auteur{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">{{ auteur.nomPrenom }}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nom et prénom</th>
+                <td>{{ auteur.nomPrenom }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                {% if auteur.sexe == 'H' %}
+                    <td>Homme</td>
+                {% elseif auteur.sexe == 'F' %}
+                    <td>Femme</td>
+                {% else %}
+                    <td>Inconnu</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{{ auteur.dateDeNaissance ? auteur.dateDeNaissance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nationalité</th>
+                <td>{{ auteur.nationalite }}</td>
+            </tr>
+            {% set count = 1 %}
+            {% for livre in auteur.livres %}
+            <tr>
+                <th>Livre n°{{count}}</th>
+                <td><a href="{{ path('livre_show', {'id': livre.id}) }}">{{ livre.titre }}</a></td>
+            </td>
+            {% set count = count + 1 %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-secondary" style="margin-right: 10px" href="{{ path('auteur_index') }}">Revenir à la liste des auteurs</a>
+
+    <a class="btn btn-info" href="{{ path('auteur_edit', {'id': auteur.id}) }}">Modifier</a>
+
+    {{ include('auteur/_delete_form.html.twig') }}
+{% endblock %}

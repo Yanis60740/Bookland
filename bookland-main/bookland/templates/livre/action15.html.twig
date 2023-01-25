@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 15{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 15: <h4>Lister les livres ayant été publiés entre 2 dates données et ayant une note comprise entre 2 notes données</h4></h1>
+{{ form_start(form15) }}
+    
+<div class="form-row">
+  <div class="col-md-5" style="margin-top: 20px">
+    <div class="position-relative form-group">
+      <label for="date_de_debut">Date de début</label>
+      {{ form_widget(form15.date_de_debut, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5" style="margin: 20px 0">
+    <div class="position-relative form-group">
+      <label for="date_de_fin">Date de fin</label>
+      {{ form_widget(form15.date_de_fin, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5" style="margin: 20px 0">
+    <div class="position-relative form-group">
+      <label for="note_inf">Note inférieur</label>
+      {{ form_widget(form15.note_inf, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5" style="margin: 20px 0">
+    <div class="position-relative form-group">
+      <label for="note_sup">Note supérieur</label>
+      {{ form_widget(form15.note_sup, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+</div>
+{{ form_widget(form15.envoyer, {'attr': {'class': 'btn btn-primary'
+
+}}) }}     
+
+{{ form_end(form15) }}
+{% endblock %}

@@ -1,0 +1,26 @@
+body {
+    background-image: url(../images/fondEcran.jpg);  
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h5 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.logo {
+    background: transparent;
+}
+
+/*
+.fondBlanc {
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.45),
+        rgba(255, 255, 255, 0.45)
+    ) !important;
+}
+*/
+

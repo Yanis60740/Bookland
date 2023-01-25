@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auteurs{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Auteurs</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom et prénom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for auteur in auteurs %}
+            <tr>
+                <td>{{ auteur.nomPrenom }}</td>
+                <td>
+                    <a class="btn btn-info" style="margin-right: 10px" href="{{ path('auteur_show', {'id': auteur.id}) }}">Plus</a>
+                    <a class="btn btn-info" href="{{ path('auteur_edit', {'id': auteur.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun auteur trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('auteur_new') }}">Ajouter un auteur</a>
+        
+{% endblock %}

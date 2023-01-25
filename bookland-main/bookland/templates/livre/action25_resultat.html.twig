@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 25{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 25: <h4>Rechercher des livres via une partie de titre</h4></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><h3>Livre</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livre in action25 %}
+            <tr>
+                <td>{{ livre.titre }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% if errors is not empty %}
+  <div class="alert alert-danger col-md-5">
+    {% for error in errors %}
+      <ul style="margin: 0px">
+        <li>{{ error }}</li>
+          </ul>
+    {% endfor %}
+  </div>
+{% endif %}
+{{ form_start(form) }}
+
+<style>
+label, input {
+  margin-right: 5px;
+}
+
+</style>
+
+<div class="form-row">
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="nom_prenom">Nom et prénom</label>
+      {{ form_widget(form.nom_prenom, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label style="margin-top: 10px" for="sexe">Sexe</label>
+        {{ form_widget(form.sexe) }}
+    </div>
+  </div>
+  <div class="col-md-5" style="margin: 10px 0">
+    <div class="position-relative form-group">
+      <label for="date_de_naissance">Date de naissance</label>
+      {{ form_widget(form.date_de_naissance, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="nationalite">Nationalité</label>
+      {{ form_widget(form.nationalite, {'attr': {'class': 'form-control'
+
+      }}) }}
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="position-relative form-group">
+      <label for="livres">Livre(s)</label>
+      {{ form_widget(form.livres, {'attr': {'class': 'form-control'
+      }}) }}
+    </div>
+  </div>
+</div>
+<button style="margin: 20px 0 10px 0" type="submit" class="btn btn-primary">
+  {{ button_label|default('Confirmer') }}
+</button>
+{{ form_end(form) }}

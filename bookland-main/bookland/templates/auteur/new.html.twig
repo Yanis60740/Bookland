@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un auteur{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Ajouter un auteur</h1>
+
+    {{ include('auteur/_form.html.twig') }}
+
+    <a class="btn btn-secondary" href="{{ path('auteur_index') }}">Revenir à la liste des auteurs</a>
+{% endblock %}

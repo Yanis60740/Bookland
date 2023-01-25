@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Livres</h1>
+
+    <h5>Action 14 : lister les livres dont tous les auteurs sont de nationalités différentes</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Livres</th>
+                <th>Auteurs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livre in action14 %}
+                <tr>
+                    <td>{{ livre.titre }}</td>
+                    <td>
+                        {% for auteur in livre.auteurs %}
+                            {% if loop.last == false %}
+                                {{ auteur.nomPrenom }},
+                                {{ auteur.Nationalite }},
+                            {% else %}
+                                {{ auteur.nomPrenom}},
+                                {{ auteur.Nationalite }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h5>Action 17 : lister tous les livres pour lesquels la parité homme/femme parmi les auteurs est respectée</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Livres</th>
+                <th>Auteurs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livre in action17 %}
+                <tr>
+                    <td>{{ livre.titre }}</td>
+                    <td>
+                        {% for auteur in livre.auteurs %}
+                            {% if loop.last == false %}
+                                {{ auteur.nomPrenom }},
+                                {{ auteur.Sexe }},
+                            {% else %}
+                                {{ auteur.nomPrenom}},
+                                {{ auteur.Sexe }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

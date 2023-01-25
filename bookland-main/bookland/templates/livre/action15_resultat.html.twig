@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 15{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 15: <h4>Lister les livres ayant été publiés entre 2 dates données et ayant une note comprise entre 2 notes données</h4></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><h3>Livre</h3></th>
+                <th><h3>Note</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livre in action15 %}
+            <tr>
+                <td>{{ livre.titre }}</td>
+                <td>{{ livre.note }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

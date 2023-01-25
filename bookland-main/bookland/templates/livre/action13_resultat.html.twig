@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Action 13{% endblock %}
+
+{% block body %}
+    <h1 style="margin: 20px 0">Action 13: <h4>Lister les livres dont la date de parution est comprise entre deux années données</h4></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><h3>Livre</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livre in action13 %}
+            <tr>
+                <td>{{ livre.titre }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

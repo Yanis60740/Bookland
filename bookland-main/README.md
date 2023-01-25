@@ -1,6 +1,6 @@
 # bookland
 
-Projet en framework Web licence 3 MIAGE UPJV 2021
+Projet en framework Web licence 3 MIAGE/INFO UPJV 2021
 
 Auteurs : 
 - Baptiste Roussel : G3 MIAGE

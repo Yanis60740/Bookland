@@ -13,3 +13,5 @@ Rôles :
 - Romain Caron : CRUDs
 - Axel Ducrocq : Diverses actions
 - Yanis Abid : Diverses actions
+
+Description: Bookland est un site web qui utilise PHP et Twig pour effectuer des recherches avancées dans une base de données. Il permet aux utilisateurs de réaliser des actions de recherche spécifiques dans une bibliothèque en ligne, selon les besoins spécifiés lors de la conception du projet.
